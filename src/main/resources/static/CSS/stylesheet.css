@@ -1,0 +1,32 @@
+body 
+{
+
+background-image: url("https://n3pix.fr/wp-content/uploads/2022/05/BackgroundVoyage.png");
+background-size: 100%;
+background-repeat: no-repeat;
+
+}
+
+.container
+{
+    padding-top: 20px;
+}
+
+#resacontact
+{
+    text-align: center;
+    padding-top: 150px; 
+}
+
+
+#contenuPrincipal
+{
+    padding-top: 5%;
+    
+}
+
+#loisirs
+{
+    padding-top: 50px;
+    
+}
