@@ -8,6 +8,11 @@ function creerFormulaire() {
     myForm.setAttribute("action", "ajouterPassagerToReservation");
     myForm.setAttribute("method", "post");
     divForm[0].appendChild(myForm);
+    var inputcsrf = document.createElement("input");
+    inputcsrf.setAttribute("type","hidden");
+    inputcsrf.setAttribute("name","${_csrf.parameterName}");
+    inputcsrf.setAttribute("value","${_csrf.token}");
+   
     for (let i = 1; i <= valeurNbPassager; i++) {
 
         
