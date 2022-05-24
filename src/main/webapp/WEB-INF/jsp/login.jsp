@@ -134,11 +134,11 @@
 		 
       <input name="aeroportDepart" placeholder="Ville de depart" class="shadow"></input>
        <input name="aeroportArrivee" placeholder="Destination" class="shadow"></input>
-       <input name="dateDepart" placeholder="Date de depart" class="shadow"></input>
-       <input name ="dateRetour" placeholder="Date de retour" class="shadow"></input>
+       <input name="dateDepart" type="date" placeholder="Date de depart" class="shadow"></input>
+       <input name ="dateRetour" type="date" placeholder="Date de retour" class="shadow"></input>
        <button type="submit" >Chercher !</button> <br>
         </form>
-        <a href=/preReservation><button >Préréservation</button></a>
+       
       </div>
 
       <div class="container" id="resacontact" style="text-align: center; padding-top: 20px;">
