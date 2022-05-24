@@ -36,8 +36,8 @@ public class VolServiceImpl implements VolService
 	}
 
 	@Override
-	public List<Vol> getVols(String villeDepart, String villeArrivee, Date dateDepart, Date dateArrivee) {
-		return volRepository.getVols(villeDepart, villeArrivee, dateDepart, dateArrivee);
+	public List<Vol> getVols(String villeDepart, String villeArrivee, Date dateDepart) {
+		return volRepository.getVols(villeDepart, villeArrivee, dateDepart);
 	}
 
 }
