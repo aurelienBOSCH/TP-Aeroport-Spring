@@ -22,7 +22,7 @@ Information sur votre réservation : infos du vol etc.....
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
-    <button type="button" class="btn btn-secondary" onclick="creerFormulaire()">Valider</button>
+    <button type="button" class="btn btn-secondary" id="validerPassagers" onclick="creerFormulaire()">Valider</button>
 </div>
 <br>
 <br>

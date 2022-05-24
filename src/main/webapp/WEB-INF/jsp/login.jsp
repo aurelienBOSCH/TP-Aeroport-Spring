@@ -138,7 +138,7 @@
        <input name ="dateRetour" type="date" placeholder="Date de retour" class="shadow"></input>
        <button type="submit" >Chercher !</button> <br>
         </form>
-        <a href=/preReservation><button >Préréservation</button></a>
+       
       </div>
 
       <div class="container" id="resacontact" style="text-align: center; padding-top: 20px;">
