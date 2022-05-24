@@ -33,4 +33,7 @@ build/
 .vscode/
 
 ### Base de donnée ###
-.application.properties
+
+#**/src/main/resources/application.properties
+#.application.properties
+.application
