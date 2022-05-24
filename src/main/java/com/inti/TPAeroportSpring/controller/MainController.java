@@ -79,12 +79,12 @@ public class MainController
 		return "redirect:/login";
 	}
 
-//	@PostMapping("/affichageVols")
-//	public String affichageVols(@RequestParam("aeroportDepart") String aeroportDepart, @RequestParam("aeroportArrivee") String aeroportArrivee, @RequestParam("dateDepart") Date dateDepart, @RequestParam("dateArrivee") Date dateArrivee, Model m)
-//	{
-//		m.addAttribute("listeVol", volService.getVols(aeroportDepart, aeroportArrivee, dateDepart, dateArrivee));
-//		return "affichageVols";
-//	}
+	@PostMapping("/affichageVols")
+	public String affichageVols(@RequestParam("aeroportDepart") String aeroportDepart, @RequestParam("aeroportArrivee") String aeroportArrivee, @RequestParam("dateDepart") Date dateDepart, @RequestParam("dateRetour") Date dateArrivee, Model m)
+	{
+		m.addAttribute("listeVol", volService.getVols(aeroportDepart, aeroportArrivee, dateDepart, dateArrivee));
+		return "affichageVols";
+	}
 	
 //	@PostMapping("/preReservation?idVol=${id}")
 //	public String preReservation(@PathVariable int id, Model m)

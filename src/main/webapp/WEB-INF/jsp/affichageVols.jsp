@@ -12,7 +12,7 @@
 <title>Liste des vols disponibles pour la selection suivante :</title>
 </head>
 <body>
-    <c:if test="${ param.category != null && param.category == 'vol'}">
+<%--     <c:if test="${ param.category != null && param.category == 'vol'}"> --%>
 		<div>
 			<table class="table table-dark table-striped">
 				<thead>
@@ -42,6 +42,6 @@
 				</tbody>
 			</table>
 		</div>
-	</c:if>
+<%-- 	</c:if> --%>
 </body>
 </html>

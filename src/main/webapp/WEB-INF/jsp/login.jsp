@@ -131,7 +131,7 @@
 
       <div class="container" style="text-align: center; padding-top: 20px;">
 		  <form id="form-1" action = "affichageVols" method="post">
-		 
+	 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>	 
       <input name="aeroportDepart" placeholder="Ville de depart" class="shadow"></input>
        <input name="aeroportArrivee" placeholder="Destination" class="shadow"></input>
        <input name="dateDepart" type="date" placeholder="Date de depart" class="shadow"></input>
