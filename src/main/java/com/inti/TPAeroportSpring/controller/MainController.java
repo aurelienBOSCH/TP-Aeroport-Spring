@@ -95,9 +95,18 @@ public class MainController
 	}
 
 	@PostMapping("/ajouterPassagerToReservation")
-	public String enregistrerPassager(@ModelAttribute("passager") Passager p)
+	public String enregistrerPassager(@RequestParam("prenom1") String prenom1, @RequestParam("prenom2") String prenom2, @RequestParam("prenom3") String prenom3, @RequestParam("prenom4") String prenom4,
+			@RequestParam("nom1") String nom1, @RequestParam("nom2") String nom2, @RequestParam("nom3") String nom3, @RequestParam("nom4") String nom4 )
 	{
-		passagerService.save(p);
+		Passager passager1 = new Passager(nom1, prenom1);
+		Passager passager2 = new Passager(nom2, prenom2);
+		Passager passager3 = new Passager(nom3, prenom3);
+		Passager passager4 = new Passager(nom4, prenom4);
+		passagerService.save(passager1);
+		passagerService.save(passager2);
+		passagerService.save(passager3);
+		passagerService.save(passager4);
+		
 		return "post_Reservation";
 	}
 
