@@ -94,7 +94,7 @@ public class MainController
 		return "preReservation";
 	}
 
-	@PostMapping("/ajouterPassagerToReservation")
+	@PostMapping("/preReservation/ajouterPassagerToReservation")
 	public String enregistrerPassager(@RequestParam("prenom1") String prenom1, @RequestParam("prenom2") String prenom2, @RequestParam("prenom3") String prenom3, @RequestParam("prenom4") String prenom4,
 			@RequestParam("nom1") String nom1, @RequestParam("nom2") String nom2, @RequestParam("nom3") String nom3, @RequestParam("nom4") String nom4 )
 	{
