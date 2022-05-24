@@ -35,7 +35,7 @@
 							<td><c:out value="${ vol.getDateArrivee() } ${ vol.getHeureArrivee() }"></c:out></td>
                             <td><c:out value="${ vol.getPrix() }€"></c:out></td>
 							<td><a
-								href="/pre_Reservation?idVol=${ vol.getIdVol() }"><button
+								href="/preReservation/${ vol.getIdVol() }"><button
 										type="button" class="btn btn-success">Réserver</button> </a></td>
 						</tr>
 					</c:forEach>

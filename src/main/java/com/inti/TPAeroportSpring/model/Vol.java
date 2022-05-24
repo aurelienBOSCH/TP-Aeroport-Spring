@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class Vol {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idVol;
+    private int idVol;
     private @NonNull Date dateDepart;
     private @NonNull Date dateArrivee;
     private @NonNull LocalTime heureDepart;

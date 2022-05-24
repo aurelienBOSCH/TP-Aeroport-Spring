@@ -87,19 +87,19 @@ public class MainController
 		return "affichageVols";
 	}
 	
-//	@PostMapping("/preReservation?idVol=${id}")
-//	public String preReservation(@PathVariable int id, Model m)
-//	{
-//		m.addAttribute("Vol",volService.getVol(id));
-//		return "preReservation";
-//	}
+	@GetMapping("/preReservation/{id}")
+	public String preReservation(@PathVariable int id, Model m)
+	{
+		m.addAttribute("Vol",volService.getVol(id));
+		return "preReservation";
+	}
 
-//	@PostMapping("/ajouterPassagerToReservation")
-//	public String enregistrerPassager(@ModelAttribute("passager") Passager p)
-//	{
-//		passagerService.save(p);
-//		return "post_Reservation";
-//	}
+	@PostMapping("/ajouterPassagerToReservation")
+	public String enregistrerPassager(@ModelAttribute("passager") Passager p)
+	{
+		passagerService.save(p);
+		return "post_Reservation";
+	}
 
 	@GetMapping("/preReservation")
 	public String preReservation()
