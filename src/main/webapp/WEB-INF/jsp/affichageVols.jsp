@@ -29,11 +29,11 @@
 					<c:forEach var="vol" items="${ listeVol }">
 						<tr>
 							<th scope="row"><c:out value="${ vol.getIdVol() }"></c:out></th>
-							<td><c:out value="${ vol.getDateDepart() }"></c:out></td>
-							<td><c:out value="${ vol.getDateArrivee() }"></c:out></td>
-							<td><c:out value="${ vol.getHeureDepart() }"></c:out></td>
-							<td><c:out value="${ vol.getHeureArrivee() }"></c:out></td>
-                            <td><c:out value="${ vol.getPrix() }"></c:out></td>
+							<td><c:out value="${ vol.getDepartAeroport().getNom() }"></c:out></td>
+							<td><c:out value="${ vol.getArriveeAeroport().getNom() }"></c:out></td>
+							<td><c:out value="${ vol.getDateDepart() } ${ vol.getHeureDepart() }"></c:out></td>
+							<td><c:out value="${ vol.getDateArrivee() } ${ vol.getHeureArrivee() }"></c:out></td>
+                            <td><c:out value="${ vol.getPrix() }€"></c:out></td>
 							<td><a
 								href="/pre_Reservation?idVol=${ vol.getIdVol() }"><button
 										type="button" class="btn btn-success">Réserver</button> </a></td>
