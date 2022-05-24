@@ -11,5 +11,5 @@ public interface VolService
     void save(Vol v);
     void updateVol(Vol v);
     void deleteVol(int id);
-    List<Vol> getVols(String villeDepart, String villeArrivee, Date dateDepart, Date dateArrivee);
+    List<Vol> getVols(String villeDepart, String villeArrivee, Date dateDepart);
 }
