@@ -7,7 +7,6 @@ function creerFormulaire() {
     var myForm = document.createElement("form");
     myForm.setAttribute("action", "ajouterPassagerToReservation");
     myForm.setAttribute("method", "post");
-    myForm.setAttribute("modelAttribute", "passager");
     divForm[0].appendChild(myForm);
     for (let i = 1; i <= valeurNbPassager; i++) {
 
