@@ -34,6 +34,5 @@ build/
 
 ### Base de donnée ###
 
-#**/src/main/resources/application.properties
-#.application.properties
-.application
+src/main/resources/application.properties
+
