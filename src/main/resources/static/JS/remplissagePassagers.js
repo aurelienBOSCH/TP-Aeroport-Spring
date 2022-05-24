@@ -1,4 +1,5 @@
 function creerFormulaire() {
+    document.getElementById("validerPassagers").disabled = 'true';
     var divForm = document.querySelectorAll(".formulairePassager");
     var nbPassager = document.getElementById("nbPassager");
     var valeurNbPassager = nbPassager.value;
