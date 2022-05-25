@@ -2,6 +2,8 @@ package com.inti.TPAeroportSpring.controller;
 
 import java.sql.Date;
 
+import javax.validation.Valid;
+
 import com.inti.TPAeroportSpring.model.Passager;
 import com.inti.TPAeroportSpring.model.Role;
 import com.inti.TPAeroportSpring.model.User;
@@ -13,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,9 +64,17 @@ public class MainController
 	}
 	
 	@PostMapping("/enregistrerUtilisateur")
-	public String enregistrerUtilisateur(@ModelAttribute("user") User u)
+	public String enregistrerUtilisateur(@ModelAttribute("user") @Valid User u,  BindingResult br)
 	{
-
+		for (FieldError fe : br.getFieldErrors())
+		{
+			System.out.println(fe);
+		}
+		
+		if(br.hasErrors())
+		{
+			return "redirect:/creerUtilisateur";
+		}
 
 
 		Role r = new Role("CLIENT");
