@@ -2,6 +2,8 @@ package com.inti.TPAeroportSpring.controller;
 
 import java.sql.Date;
 
+import javax.validation.Valid;
+
 import com.inti.TPAeroportSpring.model.Passager;
 import com.inti.TPAeroportSpring.model.Role;
 import com.inti.TPAeroportSpring.model.User;
@@ -13,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,9 +64,17 @@ public class MainController
 	}
 	
 	@PostMapping("/enregistrerUtilisateur")
-	public String enregistrerUtilisateur(@ModelAttribute("user") User u)
+	public String enregistrerUtilisateur(@ModelAttribute("user") @Valid User u,  BindingResult br)
 	{
-
+		for (FieldError fe : br.getFieldErrors())
+		{
+			System.out.println(fe);
+		}
+		
+		if(br.hasErrors())
+		{
+			return "redirect:/creerUtilisateur";
+		}
 
 
 		Role r = new Role("CLIENT");
@@ -87,12 +99,12 @@ public class MainController
 		return "affichageVols";
 	}
 	
-//	@PostMapping("/preReservation?idVol=${id}")
-//	public String preReservation(@PathVariable int id, Model m)
-//	{
-//		m.addAttribute("Vol",volService.getVol(id));
-//		return "preReservation";
-//	}
+	@GetMapping("/preReservation?idVol=${id}")
+	public String preReservation(@PathVariable int id, Model m)
+	{
+		m.addAttribute("Vol",volService.getVol(id));
+		return "preReservation";
+	}
 
 	@PostMapping("/ajouterPassagerToReservation")
 	public String enregistrerPassager(@RequestParam("prenom1") String prenom1, @RequestParam("prenom2") String prenom2, @RequestParam("prenom3") String prenom3, @RequestParam("prenom4") String prenom4,
@@ -110,11 +122,18 @@ public class MainController
 		return "post_Reservation";
 	}
 
-	@GetMapping("/preReservation")
-	public String preReservation()
+//	@GetMapping("/preReservation")
+//	public String preReservation()
+//	{
+//		return "preReservation";
+//	}
+	
+	@GetMapping("/post_Reservation")
+	public String postReservation()
 	{
-		return "preReservation";
+		return "post_Reservation";
 	}
+	
 	
 
 }

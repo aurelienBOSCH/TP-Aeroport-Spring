@@ -10,7 +10,34 @@
 
 </head>
 <body>
-Information sur votre réservation : infos du vol etc.....
+<h3>Informations sur votre Vol :</h3>
+	<div>
+			<table class="table table-dark table-striped">
+				<thead>
+					<tr>
+						<th hidden=true scope="col">Numero du vol</th>
+						<th scope="col">Aeroport de depart</th>
+						<th scope="col">Aeroport d'arrivee</th>
+						<th scope="col">Date et heure de depart</th>
+						<th scope="col">Date et heure d'arrivee</th>
+                        <th scope="col">Prix [€]</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<th hidden=true scope="row"><c:out value="${ vol.getIdVol() }"></c:out></th>
+							<td><c:out value="${ vol.getDepartAeroport().getNom() }"></c:out></td>
+							<td><c:out value="${ vol.getArriveeAeroport().getNom() }"></c:out></td>
+							<td><c:out value="${ vol.getDateDepart() } ${ vol.getHeureDepart() }"></c:out></td>
+							<td><c:out value="${ vol.getDateArrivee() } ${ vol.getHeureArrivee() }"></c:out></td>
+                            <td><c:out value="${ vol.getPrix() }€"></c:out></td>
+							
+						</tr>
+					
+				</tbody>
+			</table>
+		</div>
 <br>
 <br>
 <br>
