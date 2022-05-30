@@ -28,7 +28,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter
 	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 	        .and()
 	        .authorizeRequests()
-			.antMatchers("/login", "/enregistrerUtilisateur", "/form_client_inscription", "/contact", "/preReservation", "/affichageVols" ).permitAll()
+			.antMatchers("/login", "/enregistrerUtilisateur", "/form_client_inscription", "/contact", "/preReservation", "/affichageVols", "/preReservation/ajouterPassagerToReservation").permitAll()
 		//	.antMatchers("/admin/**").hasRole("ADMIN") //équivalent à la ligne du dessous
 		//	.antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
 			.antMatchers("/mesReservations").hasRole("CLIENT")
